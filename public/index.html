@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jamii Platform</title>
+
+<!-- STYLE -->
+<link rel="stylesheet" href="./style.css">
+
+<!-- ICONS -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- FIREBASE -->
+<script src="https://www.gstatic.com/firebasejs/12.13.0/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore-compat.js"></script>
+
+</head>
+
+<body>
+
+<!-- ================= HERO ================= -->
+
+<div class="hero">
+
+<!-- GLOW BLOBS -->
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+
+<!-- MAIN GLASS -->
+<div class="glass">
+
+<!-- LOGO -->
+<h1 class="logo">
+JAMII
+</h1>
+
+<!-- TIME -->
+<div class="time-box">
+
+<div id="clock"></div>
+
+<div id="calendar"></div>
+
+</div>
+
+<!-- SUBTITLE -->
+<p class="subtitle">
+A premium community marketplace connecting
+buyers and sellers seamlessly.
+</p>
+
+<!-- DESCRIPTION -->
+<p class="desc">
+
+Discover trusted sellers,
+place orders instantly,
+and grow your business through
+a beautiful digital ecosystem
+built for communities.
+
+</p>
+
+<!-- FLOATING IMAGE -->
+<div class="float-card">
+
+<img
+src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=900&q=80"
+alt="Marketplace">
+
+<div class="float-text">
+
+Live Orders • Smart Marketplace • Community Trade
+
+</div>
+
+</div>
+
+<!-- BUTTONS -->
+<div class="btn-row">
+
+<a href="./seller.html"
+class="btn gold">
+
+<i class="fa-solid fa-store"></i>
+
+SELLER PORTAL
+
+</a>
+
+<a href="./buyer.html"
+class="btn soft">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+BUYER ACCESS
+
+</a>
+
+</div>
+
+<!-- CONTACTS -->
+<div class="contact-box">
+
+<!-- EMAIL -->
+<a class="contact-btn email"
+href="mailto:jamii.redcolventures@gmail.com">
+
+<i class="fa-solid fa-envelope"></i>
+
+<span>
+jamii.redcolventures@gmail.com
+</span>
+
+</a>
+
+<!-- WHATSAPP -->
+<a class="contact-btn whatsapp"
+href="https://wa.me/254715048384"
+target="_blank">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+<span>
++254 715 048 384
+</span>
+
+</a>
+
+<!-- PHONE -->
+<a class="contact-btn phone"
+href="tel:+254715048384">
+
+<i class="fa-solid fa-phone"></i>
+
+<span>
++254 715 048 384
+</span>
+
+</a>
+
+</div>
+
+<!-- ADMIN LINK -->
+<div class="admin-area">
+
+<a href="./admin.html"
+class="admin-link">
+
+Powered by Redcol Ventures
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= TIME SCRIPT ================= -->
+
+<script>
+
+function updateTime(){
+
+const now = new Date();
+
+document.getElementById("clock").innerHTML =
+"🕒 " + now.toLocaleTimeString();
+
+document.getElementById("calendar").innerHTML =
+"📅 " + now.toDateString();
+
+}
+
+setInterval(updateTime,1000);
+
+updateTime();
+
+</script>
+
+<!-- ================= FIREBASE ================= -->
+
+<script src="./firebase.js"></script>
+
+<!-- ================= APP ================= -->
+
+<script src="./app.js"></script>
+
+</body>
+
+</html>
