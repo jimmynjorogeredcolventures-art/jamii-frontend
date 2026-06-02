@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Buyer Portal - Jamii</title>
+
+<!-- STYLE -->
+<link rel="stylesheet" href="./style.css">
+
+<!-- ICONS -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- FIREBASE -->
+<script src="https://www.gstatic.com/firebasejs/12.13.0/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore-compat.js"></script>
+
+</head>
+
+<body>
+
+<div class="hero">
+
+<!-- GLOW BLOBS -->
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+
+<!-- MAIN CARD -->
+<div class="glass">
+
+<!-- LOGO -->
+<h1 class="logo">
+BUYER
+</h1>
+
+<p class="subtitle">
+
+Connect with trusted sellers,
+discover products,
+and create orders instantly.
+
+</p>
+
+<!-- ================= REGISTER ================= -->
+
+<div class="section-card">
+
+<h2>
+
+<i class="fa-solid fa-user-plus"></i>
+
+Buyer Registration
+
+</h2>
+
+<input id="b_name"
+placeholder="Buyer Name">
+
+<input id="b_shop"
+placeholder="Shop Name">
+
+<input id="b_county"
+placeholder="County">
+
+<input id="b_place"
+placeholder="Place">
+
+<input id="b_contact"
+placeholder="Phone Number">
+
+<input id="b_password"
+type="password"
+placeholder="Password">
+
+<button
+type="button"
+onclick="buyerRegister()">
+
+Register Buyer
+
+</button>
+
+</div>
+
+<hr>
+
+<!-- ================= LOGIN ================= -->
+
+<div id="buyerLoginSection"
+class="section-card">
+
+<h2>
+
+<i class="fa-solid fa-lock"></i>
+
+Buyer Login
+
+</h2>
+
+<input id="b_login_name"
+placeholder="Buyer Name">
+
+<input id="b_login_pass"
+type="password"
+placeholder="Password">
+
+<button
+type="button"
+onclick="buyerLogin()">
+
+🔓 Login
+
+</button>
+
+</div>
+
+<hr>
+
+<!-- ================= BUYER DASHBOARD ================= -->
+
+<div id="buyerDash">
+
+<!-- DASHBOARD LOADS HERE -->
+
+</div>
+
+<!-- HOME LINK -->
+
+<a href="./index.html"
+class="admin-link">
+
+⬅ Back To Jamii Home
+
+</a>
+
+</div>
+
+</div>
+
+<!-- FIREBASE -->
+<script src="./firebase.js"></script>
+
+<!-- APP -->
+<script src="./app.js"></script>
+
+</body>
+
+</html>
