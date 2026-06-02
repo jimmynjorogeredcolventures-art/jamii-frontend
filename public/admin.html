@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Admin Portal - Jamii</title>
+
+<!-- STYLE -->
+<link rel="stylesheet" href="./style.css">
+
+<!-- ICONS -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- FIREBASE -->
+<script src="https://www.gstatic.com/firebasejs/12.13.0/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore-compat.js"></script>
+
+</head>
+
+<body>
+
+<div class="hero">
+
+<!-- GLOW BLOBS -->
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+
+<!-- MAIN GLASS -->
+<div class="glass">
+
+<!-- LOGO -->
+<h1 class="logo">
+ADMIN
+</h1>
+
+<p class="subtitle">
+
+Secure Jamii management portal
+for marketplace monitoring,
+seller control,
+buyer management,
+and system analytics.
+
+</p>
+
+<!-- ================= ADMIN LOGIN ================= -->
+
+<div class="section-card">
+
+<h2>
+
+<i class="fa-solid fa-user-shield"></i>
+
+Admin Login
+
+</h2>
+
+<input
+id="admin_pass"
+type="password"
+placeholder="Enter System Password">
+
+<button
+type="button"
+onclick="adminLogin()">
+
+🔐 Login To Dashboard
+
+</button>
+
+</div>
+
+<hr>
+
+<!-- ================= ADMIN DASHBOARD ================= -->
+
+<div id="adminDash">
+
+<!-- DASHBOARD LOADS HERE -->
+
+</div>
+
+<!-- HOME -->
+<a href="./index.html"
+class="admin-link">
+
+⬅ Back To Jamii Home
+
+</a>
+
+</div>
+
+</div>
+
+<!-- FIREBASE -->
+<script src="./firebase.js"></script>
+
+<!-- APP -->
+<script src="./app.js"></script>
+
+</body>
+
+</html>
