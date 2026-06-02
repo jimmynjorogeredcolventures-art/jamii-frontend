@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Seller Portal - Jamii</title>
+
+<!-- STYLE -->
+<link rel="stylesheet" href="./style.css">
+
+<!-- ICONS -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- FIREBASE -->
+<script src="https://www.gstatic.com/firebasejs/12.13.0/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore-compat.js"></script>
+
+</head>
+
+<body>
+
+<div class="hero">
+
+  <!-- GLOW EFFECTS -->
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+
+  <!-- MAIN CARD -->
+  <div class="glass">
+
+    <!-- LOGO -->
+    <h1 class="logo">
+      SELLER
+    </h1>
+
+    <p class="subtitle">
+      Create your seller account and start receiving marketplace orders.
+    </p>
+
+    <!-- =====================================================
+         SELLER REGISTRATION
+    ====================================================== -->
+
+    <div class="section-card">
+
+      <h2>
+        <i class="fa-solid fa-user-plus"></i>
+        Seller Registration
+      </h2>
+
+      <input
+      id="s_name"
+      placeholder="Seller Name">
+
+      <input
+      id="s_business"
+      placeholder="Business Name">
+
+      <input
+      id="s_branch"
+      placeholder="Branch">
+
+      <input
+      id="s_category"
+      placeholder="Category">
+
+      <input
+      id="s_county"
+      placeholder="County">
+
+      <input
+      id="s_place"
+      placeholder="Place of Business">
+
+      <input
+      id="s_routes"
+      placeholder="Routes & Days">
+
+      <input
+      id="s_contact"
+      placeholder="Phone Number">
+
+      <input
+      id="s_password"
+      type="password"
+      placeholder="Password">
+
+      <input
+      id="s_confirm_password"
+      type="password"
+      placeholder="Confirm Password">
+
+      <button
+      type="button"
+      onclick="sellerRegister()">
+
+        Register Seller
+
+      </button>
+
+    </div>
+
+    <hr>
+
+    <!-- =====================================================
+         SELLER LOGIN 1
+    ====================================================== -->
+
+    <div
+    id="sellerLoginSection"
+    class="section-card">
+
+      <h2>
+        <i class="fa-solid fa-lock"></i>
+        Seller Login 1
+      </h2>
+
+      <input
+      id="s_login_name"
+      placeholder="Seller Name">
+
+      <input
+      id="s_login_pass"
+      type="password"
+      placeholder="Password">
+
+      <button
+      type="button"
+      onclick="sellerLogin1()">
+
+        Login 1
+
+      </button>
+
+    </div>
+
+    <hr>
+
+    <!-- =====================================================
+         PAYMENT SECTION
+    ====================================================== -->
+
+    <div
+    id="paymentSection"
+    class="section-card"
+    style="display:none;">
+
+      <h2>
+        <i class="fa-solid fa-money-bill-wave"></i>
+        Subscription Payment
+      </h2>
+
+      <p class="desc">
+
+        Activate your seller account with a
+        <b>KES 1,799 / $14</b>
+        subscription valid for 35 days.
+
+      </p>
+
+      <!-- PHONE INPUT -->
+
+      <input
+      type="text"
+      id="stkPhone"
+      placeholder="2547XXXXXXXX">
+
+      <!-- STK BUTTON -->
+
+      <button
+      type="button"
+      onclick="sellerPay()">
+
+        💳 Pay With M-Pesa
+
+      </button>
+
+      <!-- JAMII COUPON -->
+
+      <button
+      type="button"
+      onclick="activateJamiiCoupon()">
+
+        🎁 Use Jamii Coupon
+
+      </button>
+
+      <!-- COUNTDOWN -->
+
+      <div id="jamiiCountdown">
+
+        ⏳ Waiting...
+
+      </div>
+
+    </div>
+
+    <hr>
+
+    <!-- =====================================================
+         LOGIN 2
+    ====================================================== -->
+
+    <div
+    id="login2Section"
+    class="section-card">
+
+      <h2>
+        <i class="fa-solid fa-shield-halved"></i>
+        Seller Dashboard Access
+      </h2>
+
+      <p class="desc">
+
+        Use this button after successful payment
+        or active Jamii coupon.
+
+      </p>
+
+      <button
+      type="button"
+      onclick="sellerLogin2()">
+
+        🚀 Open Dashboard
+
+      </button>
+
+    </div>
+
+    <hr>
+
+    <!-- =====================================================
+         DASHBOARD
+    ====================================================== -->
+
+    <div id="sellerDash"></div>
+
+    <!-- HOME -->
+
+    <a
+    href="./index.html"
+    class="admin-link">
+
+      ⬅ Back To Jamii Home
+
+    </a>
+
+  </div>
+
+</div>
+
+<!-- FIREBASE -->
+<script src="./firebase.js"></script>
+
+<!-- APP -->
+<script src="./app.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--DOCTYPE html
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Seller Portal - Jamii</title>
+
+<!-- STYLE 
+<link rel="stylesheet" href="./style.css">
+
+<!-- ICONS
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- FIREBASE 
+<script src="https://www.gstatic.com/firebasejs/12.13.0/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore-compat.js"></script>
+
+</head>
+
+<body>
+
+<div class="hero">
+
+<!-- GLOW EFFECTS 
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+
+<!-- MAIN CARD
+<div class="glass">
+
+<!-- LOGO -
+<h1 class="logo">
+SELLER
+</h1>
+
+<p class="subtitle">
+Create your seller account and start receiving marketplace orders.
+</p>
+
+<!-- ================= REGISTER ================= 
+
+<div class="section-card">
+
+<h2>
+<i class="fa-solid fa-user-plus"></i>
+Seller Registration
+</h2>
+
+<input id="s_name"
+placeholder="Seller Name">
+
+<input id="s_business"
+placeholder="Business Name">
+
+<input id="s_branch"
+placeholder="Branch">
+
+<input id="s_category"
+placeholder="Category">
+
+<input id="s_county"
+placeholder="County">
+
+<input id="s_place"
+placeholder="Place of Business">
+
+<input id="s_routes"
+placeholder="Routes & Days">
+
+<input id="s_contact"
+placeholder="Phone Number">
+
+<input id="s_password"
+type="password"
+placeholder="Password">
+
+<button
+type="button"
+onclick="sellerRegister()">
+
+Register Seller
+
+</button>
+
+</div>
+
+<hr>
+
+<!-- ================= LOGIN 1 ================= 
+
+<div id="sellerLoginSection"
+class="section-card">
+
+<h2>
+<i class="fa-solid fa-lock"></i>
+Seller Login 1
+</h2>
+
+<input id="s_login_name"
+placeholder="Seller Name">
+
+<input id="s_login_pass"
+type="password"
+placeholder="Password">
+
+<button
+type="button"
+onclick="sellerLogin1()">
+
+Login 1
+
+</button>
+
+</div>
+
+<hr>
+
+<!-- ================= PAYMENT ================= 
+
+<div id="paymentSection"
+class="section-card">
+
+<h2>
+<i class="fa-solid fa-money-bill-wave"></i>
+Subscription Payment
+</h2>
+
+<p class="desc">
+
+Activate your seller account with a
+KES 1,799 /14 $ subscription valid for 35 days.
+
+</p>
+
+<!-- NORMAL PAYMENT 
+
+<button
+type="button"
+onclick="sellerPay()">
+
+💳 Pay 1500 Subscription
+
+</button>
+
+
+
+<!-- ================= PAYMENT ================= 
+
+<div id="paymentSection"
+class="section-card">
+
+<h2>
+<i class="fa-solid fa-money-bill-wave"></i>
+Subscription Payment
+</h2>
+
+<p class="desc">
+
+Activate your seller account with a
+KES 1,799 /14 $ subscription valid for 35 days.
+
+</p>
+
+<button
+type="button"
+onclick="sellerPay()">
+
+💳 Pay 1500 Subscription
+
+</button>
+
+</div>
+
+<hr>
+
+<!-- ================= LOGIN 2 ================= 
+
+<div id="login2Section"
+class="section-card">
+
+<h2>
+<i class="fa-solid fa-shield-halved"></i>
+Seller Login 2
+</h2>
+
+<p class="desc">
+
+After successful payment,
+continue to your dashboard.
+
+</p>
+
+<button
+type="button"
+onclick="sellerLogin2()">
+
+🚀 Open Dashboard
+
+</button>
+
+</div>
+
+<hr>
+
+<!-- ================= LOGIN 1 ================= 
+
+<div id="sellerLoginSection" class="section-card">
+
+  <h2>
+    <i class="fa-solid fa-lock"></i>
+    Seller Login 1
+  </h2>
+
+  <input id="s_login_name" placeholder="Seller Name">
+
+  <input id="s_login_pass" type="password" placeholder="Password">
+
+  <button type="button" onclick="sellerLogin1()">
+    Login 1
+  </button>
+
+</div>
+
+<hr>
+
+<!-- ================= JAMII COUPON ================= 
+
+<div id="jamiiCouponSection" class="section-card">
+
+  <h2>
+    <i class="fa-solid fa-gift"></i>
+    Jamii Free Coupon
+  </h2>
+
+  <p class="desc">
+    Activate free access until
+    <b>31 May 2026 at 12:00 PM</b>.
+    After expiry, payment will be required.
+  </p>
+
+  <div id="jamiiCountdown">
+    ⏳ Loading countdown...
+  </div>
+
+  <button type="button" onclick="activateJamiiCoupon()">
+    🎁 Activate Free Coupon
+  </button>
+
+</div>
+
+<hr>
+
+<!-- ================= PAYMENT (STK PUSH) ================= 
+
+<div id="paymentSection" class="section-card">
+
+  <h2>
+    <i class="fa-solid fa-money-bill-wave"></i>
+    Subscription Payment
+  </h2>
+
+  <p class="desc">
+    Activate your seller account with a
+    <b>KES 1,799 / $14</b> subscription via M-Pesa STK Push.
+  </p>
+
+  <button type="button" onclick="sellerPay()">
+    💳 Pay with M-Pesa (STK Push)
+  </button>
+
+</div>
+
+<hr>
+
+<!-- ================= LOGIN 2 ================= 
+
+<div id="login2Section" class="section-card">
+
+  <h2>
+    <i class="fa-solid fa-shield-halved"></i>
+    Seller Dashboard Access
+  </h2>
+
+  <p class="desc">
+    Use this button after payment or active Jamii coupon.
+  </p>
+
+  <button type="button" onclick="sellerLogin2()">
+    🚀 Open Dashboard
+  </button>
+
+</div>
+
+
+<!-- ================= DASHBOARD ================= 
+
+<div id="sellerDash"></div>
+
+<!-- HOME 
+<a href="./index.html"
+class="admin-link">
+
+⬅ Back To Jamii Home
+
+</a>
+
+</div>
+
+</div>
+
+<!-- FIREBASE 
+<script src="./firebase.js"></script>
+
+<!-- APP 
+<script src="./app.js"></script>
+
+</body>
+
+</html> 
