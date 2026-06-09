@@ -75,7 +75,7 @@ console.log("🔥 Jamii App Loaded");
 ===================================================== */
 
 const SUBSCRIPTION_DAYS = 35;
-const SUBSCRIPTION_AMOUNT = 1799;
+const SUBSCRIPTION_AMOUNT = 20;
 
 /* ensure CONFIG exists */
 window.CONFIG = window.CONFIG ?? {};
